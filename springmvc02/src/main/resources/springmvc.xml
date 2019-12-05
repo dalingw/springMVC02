@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--url处理器-->
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+    <!--url适配器-->
+    <bean class="org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter"/>
+   <!--获取modelandview中的数据
+   解析视图名字
+   拼接视图名字找到这个视图
+   将数据渲染到视图上-->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="internalResourceViewResolver">
+     <!--前缀-->
+        <property name="prefix" value="/WEB-INF/jsp"/>
+       <!--后缀-->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <bean id="/hello" class="com.dkx.contorer.hello"/>
+</beans>
